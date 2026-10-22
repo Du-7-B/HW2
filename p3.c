@@ -9,33 +9,27 @@
 
 int main(void)
 {
-    int n;
-    scanf("%d",&n);
-    double a[n+1];
-    double p;
-    for(int i=0;i <= n;i++){
-        scanf("%lf",&p);
-        a[i]=p;
+     int n;
+    scanf("%d", &n);
+    double a[10005];
+    for (int i = 0; i <= n; i++)
+    {
+        scanf("%lf", &a[i]);
     }
     int m;
-    scanf("%d",&m);
-    double b[m];
-    double q;
-    for(int j=0;j<m;j++){
-        scanf("%lf",&q);
-        b[j]=q;
-    }
-    for(int c=0;c<m;c++){
-        double x =b[c];
-        double sum=0.0;
-        for(int d=0;d<=n;d++){
-            double f=1.0;
-            for(int e=0;e<d;e++){
-                f*=x;
-            }
-            sum +=a[d]*f;
+    scanf("%d", &m);
+    for (int j = 0; j < m; j++)
+    {
+        double x;
+        scanf("%lf", &x);
+        double sum = 0.0;
+        double f = 1.0;
+        for (int d = 0; d <= n; d++)
+        {
+            sum += a[d] * f;
+            f *= x;
         }
-        printf("%.3f\n",sum);
+        printf("%.3f\n", sum);
     }
     return 0;
 }
